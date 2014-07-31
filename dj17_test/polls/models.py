@@ -16,3 +16,11 @@ class Choice(models.Model):
 
     def __unicode__(self):
         return self.choice_text
+
+
+class Vote(models.Model):
+    choice = models.ForeignKey(Choice)
+    user = models.ForeignKey('auth.User', null=True)
+
+    def __unicode__(self):
+        return "%s vote for: %s" % (str(self.user), str(self.choice))
