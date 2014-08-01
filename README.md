@@ -6,7 +6,7 @@ About this:
 -----------------------------------
 
 Just testing out the Django 1.7 Migrations!
-More about this in my blog post:  http://www.arruda.blog.br/programacao/python/django/django-1-7-mig…example-of-use/
+More about this in my blog post:  http://www.arruda.blog.br/programacao/python/django/django-1-7-migrations-simple-example-of-use/
 
 Install:
 --------
