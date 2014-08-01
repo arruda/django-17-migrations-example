@@ -54,11 +54,18 @@ Now, let's apply this migration:
     ./manage.py migrate
 
 After this you run the server and see how things are.
+
 You'll notice that now we have a Vote model, but we also have the Choice.vote field.
 And that's not exacly what we wanted. So in the next step we'll remediate this.
 
 ### Migrating Choice.vote data to Vote Model
 To simulate just a little on how it would be in a production scenario (when you can't simple just forget about the old data without migrating it), will do now a migration that will create a `Vote` model for each `Choice.vote`, and just to make things easier we'll consider the user as null (we could have a `ghost` user just like Github does in here).
+
+So let's first load some fixtures for our polls model:
+
+    ./manage.py loaddata polls/fixtures/polls_0002.json
+
+This have some objects for the models right after the last migration.
 
 To create a data migration you can run the command `./manage.py makemigrations --empty polls`, this will create a scheleton migration file that you can use to do your Data Migration.
 
