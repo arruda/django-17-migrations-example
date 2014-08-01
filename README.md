@@ -61,17 +61,17 @@ And that's not exacly what we wanted. So in the next step we'll remediate this.
 ### Migrating Choice.vote data to Vote Model
 To simulate just a little on how it would be in a production scenario (when you can't simple just forget about the old data without migrating it), will do now a migration that will create a `Vote` model for each `Choice.vote`, and just to make things easier we'll consider the user as null (we could have a `ghost` user just like Github does in here).
 
-So let's first load some fixtures for our polls model:
-
-    ./manage.py loaddata polls/fixtures/polls_0002.json
-
-This have some objects for the models right after the last migration.
-
 To create a data migration you can run the command `./manage.py makemigrations --empty polls`, this will create a scheleton migration file that you can use to do your Data Migration.
 
 So, let's checkout the code to see what I did for this Data Migration:
 
     git checkout 4e7112b; find ./ -name "*.pyc" | xargs rm -v
+
+So let's first load some fixtures for our polls model:
+
+    ./manage.py loaddata polls/fixtures/polls_0002.json
+
+This have some objects for the models right after the last migration.
 
 The file that does this migration is called `polls/migrations/0003_vote_field_to_model`.
 
