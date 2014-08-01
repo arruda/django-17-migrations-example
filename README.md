@@ -20,7 +20,9 @@ First lets go back in the code to when I just created the first migration for th
 by using the command `./manage.py makemigrations`:
 
 
-    git checkout  d5eb2c5
+    git checkout  d5eb2c5; find ./ -name "*.pyc" | xargs rm -v
+
+**OBS**: The `find ./ -name "*.pyc" | xargs rm -v` part just removes the `.pyc`, and avoid some confusion in this workflow.
 
 The next thing we need to do is execute our migrations, in this case it will:
 
@@ -42,14 +44,14 @@ Now let's try some schema migration. For this we'll replace the `vote` field in 
 to a `Vote` model that have the user that made that vote.
 So lets navigate to that commit:
 
-    git checkout 10f5a53
+    git checkout 10f5a53; find ./ -name "*.pyc" | xargs rm -v
 
 You'll notice that we first created the `Vote` model then created the migration that represents it's creation.
 For now we'll leave the `Choice.vote` field as it is.
 
 Now, let's apply this migration:
 
-    ./manage.py migration
+    ./manage.py migrate
 
 After this you run the server and see how things are.
 You'll notice that now we have a Vote model, but we also have the Choice.vote field.
@@ -62,7 +64,7 @@ To create a data migration you can run the command `./manage.py makemigrations -
 
 So, let's checkout the code to see what I did for this Data Migration:
 
-    git checkout 4e7112b
+    git checkout 4e7112b; find ./ -name "*.pyc" | xargs rm -v
 
 The file that does this migration is called `polls/migrations/0003_vote_field_to_model`.
 
@@ -114,7 +116,7 @@ To do this, we can just delete the model from models.py and then use the `./mana
 
 So let's naviage to the code right after this was done:
 
-    git checkout 5118080
+    git checkout 5118080; find ./ -name "*.pyc" | xargs rm -v
 
 Let's execute the migration.
 
