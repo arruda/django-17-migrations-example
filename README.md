@@ -6,6 +6,7 @@ About this:
 -----------------------------------
 
 Just testing out the Django 1.7 Migrations!
+More about this in my blog post:  http://www.arruda.blog.br/programacao/python/django/django-1-7-mig…example-of-use/
 
 Install:
 --------
@@ -130,6 +131,9 @@ Let's execute the migration.
 Again, you can do this using `./manage.py migrate` or more specific `./manage.py migrate polls 0004_remove_choice_votes`.
 
 After that you can run the server and check out that the `Choice.vote` field is gone.
+
+That's all. I hope you liked it!
+
 
 LICENSE
 =============
