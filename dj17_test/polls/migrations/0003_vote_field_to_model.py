@@ -17,10 +17,13 @@ def revert(apps, schema_editor):
     "revert back deleting the votes for a choice and adding it as a vote in the field"
 
     Choice = apps.get_model("polls", "Choice")
+    # import pdb;pdb.set_trace()
     for choice in Choice.objects.all():
-        choice.vote = choice.vote_set.all().count()
-        choice.vote_set.delete()
+        votes = choice.vote_set.all()
+        choice.votes = votes.count()
         choice.save()
+        for vote in votes:
+            vote.delete()
 
 
 class Migration(migrations.Migration):

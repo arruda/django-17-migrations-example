@@ -1,0 +1,1 @@
+[{"fields": {"question_text": "What is your quest?", "pub_date": "2014-07-31T22:38:15Z"}, "model": "polls.question", "pk": 1}, {"fields": {"choice_text": "The search for the holy grail", "question": 1, "votes": 1}, "model": "polls.choice", "pk": 1}, {"fields": {"choice_text": "Learn about Django 1.7 migrations", "question": 1, "votes": 0}, "model": "polls.choice", "pk": 2}]
