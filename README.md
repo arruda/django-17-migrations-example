@@ -1,5 +1,5 @@
 ===================================
-Testting Django 1.7 Migrations
+Testing Django 1.7 Migrations
 ===================================
 
 About this:
